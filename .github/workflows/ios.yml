@@ -8,7 +8,7 @@ jobs:
   check:
     name: tech - Test check job
     runs-on: macos-latest
-    if: contains(github.event.comment.body, '/check')
+    if: commented && contains(github.event.comment.body, '/check')
     steps:
       - name: Checkout
         uses: actions/checkout@v4
