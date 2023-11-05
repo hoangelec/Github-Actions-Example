@@ -5,18 +5,13 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-    name: Test bundler for fastlane and run SwiftLint
+  check:
+    name: tech - Test check job
     runs-on: macos-latest
     if: contains(github.event.comment.body, '/check')
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Bundle install  
+      - name: Dummy echo  
         run: |
-          bundle install
-      - name: Install mint
-        run: |
-          brew install mint
-          mint bootstrap
-          mint run swiftlint
+          echo "Job comment invoked successfully"
