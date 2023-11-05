@@ -1,4 +1,5 @@
 name: iOS Example workflow
+run-name: check
 
 on:
   pull_request:
