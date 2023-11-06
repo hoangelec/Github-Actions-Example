@@ -9,9 +9,8 @@ jobs:
   pr_commented:
     # This job only runs for pull request comments
     name: comment check
-    if: ${{ github.event.issue.pull_request }}
     runs-on: macos-latest
-    if: ${{ github.event.issue.pull_request && contains(github.event.comment.body, '/check') }}
+    if: github.event.issue.pull_request && contains(github.event.comment.body, '/check')
     steps:
       - name: Dummy echo  
         run: |
