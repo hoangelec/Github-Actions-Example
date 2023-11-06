@@ -11,3 +11,7 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
+  job-finish: 
+    runs-on: macos-latest
+    steps:
+      - run: echo "Job finish"
